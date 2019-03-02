@@ -7,7 +7,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         {{#dependencies}}
-        .package(url: "{{url}}", {{version}}})
+        .package(url: "{{url}}", {{{version}}})
         {{/dependencies}}
     ],
     targets: [
@@ -15,6 +15,6 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "{{name}}",
-            dependencies: [{{dependenciesTargets}}]),
+            dependencies: [{{{dependenciesTargets}}]),
     ]
 )
